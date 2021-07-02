@@ -4,7 +4,7 @@ on:
   pull_request:
     types: [ opened, edited, labeled ]
   pull_request_review:
-    types: [edited, dismissed]
+    types: [ edited, dismissed ]
 
 jobs:
   deployment_notification:
