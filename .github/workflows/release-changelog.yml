@@ -1,0 +1,17 @@
+name: Release Changelog Notification
+
+on:
+  pull_request:
+    types: [ opened ]
+
+jobs:
+  deployment_notification:
+    runs-on: ubuntu-latest
+    name: Release Changelog Notification
+    steps:
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@master
+        with:
+          message: |
+            Hi
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
