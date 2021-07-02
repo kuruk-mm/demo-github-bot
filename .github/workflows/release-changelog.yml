@@ -2,8 +2,8 @@ name: Release Changelog Notification
 
 on:
   pull_request:
-    types: [ opened ]
-  push:
+    types: [ opened, edited ]
+  issue_commented:
 
 jobs:
   deployment_notification:
