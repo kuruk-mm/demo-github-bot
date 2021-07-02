@@ -2,7 +2,7 @@ name: Release Changelog Notification
 
 on:
   pull_request:
-    types: [ opened, edited ]
+    types: [ opened, synchronize ]
 
 jobs:
   comment:
