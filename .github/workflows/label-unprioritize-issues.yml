@@ -1,15 +1,16 @@
-name: Add Label
-
+name: Label issues
 on:
   issues:
-    types: opened
-
+    types:
+      - opened
 jobs:
-  add_label:
+  label_issues:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions-ecosystem/action-add-labels@v1
-        if: ${{ startsWith(github.event.comment.body, '/add-labels') }}
+      - name: Label issues
+        uses: andymckay/labeler@5c59dabdfd4dd5bd9c6e6d255b01b9d764af4414
         with:
-          labels: bug
+          add-labels: "bug"
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
