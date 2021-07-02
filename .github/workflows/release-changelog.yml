@@ -2,7 +2,9 @@ name: Release Changelog Notification
 
 on:
   pull_request:
-    types: [ opened ]
+    types: [ opened, edited, labeled ]
+  pull_request_review:
+    types: [ edited, dismissed ]
 
 jobs:
   deployment_notification:
@@ -13,5 +15,5 @@ jobs:
         uses: thollander/actions-comment-pull-request@master
         with:
           message: |
-            Hi
+            Hi 2
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
